@@ -47,6 +47,12 @@ function App() {
 
   }
 
+  const handleClearCompleted = () => {
+    setListTasks(
+        listTasks.filter( t => !t.status )
+    );
+  }
+
   const handleCheck = (task) => {
     setListTasks(
         listTasks.map( t => {
@@ -79,6 +85,8 @@ function App() {
     setModeSort(mode);
   }
 
+  const hasCompletedTasks = listTasks.some( t => t.status );
+
   useEffect(() => {
     if( modeSort === 'All') {
         setShowListTasks(
@@ -105,6 +113,14 @@ function App() {
                 handleSubmit={handleSubmit}
                 sortHandler={handleSortList}
              />
+            { hasCompletedTasks && (
+                <button
+                    onClick={handleClearCompleted}
+                    className="bg-red-500 hover:bg-red-600 text-white font-medium rounded-md px-5 py-2"
+                >
+                    Clear Completed
+                </button>
+            )}
             <Todos 
                 tasks={showListTasks}
                 checkHandler={handleCheck}
