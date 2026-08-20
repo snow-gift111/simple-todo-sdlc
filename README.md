@@ -1,8 +1,49 @@
 # Simple Todo App React Without redux
+
 Live Demo: https://no2ehi.github.io/simple-todo-app-react/
 ![simple-todo-app-react](https://user-images.githubusercontent.com/35344951/214790785-e90ddd84-8d3d-482f-baaa-30b4ce6032d2.jpg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Project Overview
+
+Simple Todo App React is a client-side React Todo application for managing tasks. Users can add Todo items, mark items complete or incomplete, delete individual items, and use the existing edit and sort functionality.
+
+## Implemented Enhancement
+
+### Clear Completed Todo Items
+
+The approved enhancement adds a **Clear Completed** button to the Todo UI. The button appears only when at least one Todo item is completed. When selected, it removes completed Todo items from the visible list and keeps incomplete Todo items unchanged.
+
+This enhancement is implemented entirely on the client side. No backend API, database, authentication, or external service was added.
+
+## Features
+
+- Add Todo items.
+- Mark Todo items complete or incomplete.
+- Delete individual Todo items.
+- Edit and sort Todo items using the existing application behavior.
+- Clear all completed Todo items in one action when completed items exist.
+
+## Technology Stack
+
+- React 18
+- Create React App / `react-scripts`
+- JavaScript
+- Material UI packages
+- Tailwind CSS utility classes
+- React Testing Library
+
+## Project Structure
+
+```text
+src/
+├── App.js                 # Main Todo state and Clear Completed behavior
+├── App.test.js            # React Testing Library coverage for Clear Completed
+└── components/            # Existing Todo UI components
+```
+
+Additional documentation for the completed enhancement is available in `docs/`.
 
 ## Available Scripts
 
@@ -20,6 +61,12 @@ You may also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+For a non-watch test run, use:
+
+```bash
+npm test -- --watchAll=false
+```
 
 ### `npm run build`
 
